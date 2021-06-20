@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      first:
+        url: jdbc:mysql://127.0.0.1:3306/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: chengxq
+        password: cxq2046996
+      send:
+        url: jdbc:mysql://127.0.0.1:3307/test?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: chengxq
+        password: cxq2046996
+

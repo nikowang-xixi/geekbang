@@ -1,0 +1,25 @@
+spring:
+  shardingsphere:
+    datasource:
+      names: ds-master, ds-slave
+      ds-master:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://rm-bp1a5iqov5u7bhmamwo.mysql.rds.aliyuncs.com:3306/db0?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: someone
+        password: chengxq123
+      ds-slave:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.jdbc.Driver
+        jdbc-url: jdbc:mysql://rm-bp1a5iqov5u7bhmamwo.mysql.rds.aliyuncs.com:3306/db1?useSSL=false&useUnicode=true&characterEncoding=UTF-8
+        username: someone
+        password: chengxq123
+    masterslave:
+      name: ms
+      master-data-source-name: ds-master
+      slave-data-source-names: ds-slave
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.xq.domain
