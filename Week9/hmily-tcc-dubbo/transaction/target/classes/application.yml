@@ -1,0 +1,25 @@
+server:
+  port: 8085
+  address: 0.0.0.0
+  servlet:
+    context-path: /
+
+spring:
+    datasource:
+        driver-class-name:  com.mysql.jdbc.Driver
+        url: jdbc:mysql://127.0.0.1:3306/hmily_stock?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: root
+        password:
+        initialization-mode: always
+        schema: classpath:sql/schema.sql
+        data: classpath:sql/data.sql
+
+
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  config-location: classpath:mybatis/mybatis-config.xml
+
+logging:
+    level:
+        com.mall.MallWeb.mapper: debug
+
